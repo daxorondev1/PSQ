@@ -10,34 +10,22 @@ using namespace std;
 
 void solve()
 {
-  long long int n;
-  cin>>n;
-
-  vector <int> vec(n,0);
-
   long long int a,b;
-  cin>>a;
-  while(a--)
+  cin>>a>>b;
+
+  long long int ans = a/b;
+
+  if(a%b!=0)
   {
-    cin>>b;
-    vec[b-1]=1;
+  ans = b*(ans+1);
+
+  ans = ans-a;
+
+  cout<<ans<<"\n";
   }
-  cin>>a;
-  while(a--)
-  {
-    cin>>b;
-    vec[b-1]=1;
-  }
-  bool flag = true;
-  for(int i = 0; i<n; i++)
-  {
-    if(vec[i]==0)
-      flag=false;
-  }
-  if(flag)
-    cout<<"I become the guy.";
   else
-    cout<<"Oh, my keyboard!";
+    cout<<0<<"\n";
+
 }
 
 int main(){
@@ -51,7 +39,7 @@ int main(){
   cin.tie(NULL);
 
   //Testcases
-  //test 
+  test 
   solve();
   return 0;
 }
